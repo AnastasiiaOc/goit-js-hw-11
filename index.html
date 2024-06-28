@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/goit-js-hw-11/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>goit-js-hw-11</title>
+  
+  <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-0fc460d7.js">
+  <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-4b066c51.css">
+  <link rel="stylesheet" href="/goit-js-hw-11/assets/index-665ae9e3.css">
+</head>
+
+<body>
+  <form class="form">
+    <input type="text" name="search" id="search-field" placeholder="Search images...">
+    <button type="submit">Search</button>
+  </form>
+  <div class="loader"></div>
+  <ul class="gallery"></ul>
+
+  
+  
+  
+</body>
+
+</html>
+
+<!-- 
++++++++++++++++++++DOESNT WORK++++++++++++++++++++++++
+
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/goit-js-hw-11/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    
-    <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-86291ea8.js">
-    <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-d3b5fc92.css">
+        <title>goit-js-hw-11</title>
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-<form class="form">
-    <input type="text" name="seach" placeholder="Search images..."/>
+<form class="js-search">
+    <input type="text" name="seach" id="search-field"  placeholder="Search images..."/>
     <button class="button" type = "submit">Search</button>
   </form>
+
+  <div class="loader"></div>
   
 <ul class="gallery"> 
 
 </ul> 
 
 
-    
-    
+    <script type="module" src="./main.js"></script>
+    <script type="module" src="./js/pixabay-api.js"></script>
+    <script type="module" src="./js/render-functions.js"></script>
+
   </body>
-</html>
+</html> -->
 
 
 <!-- 
+
+
 При натисканні на кнопку відправки форми, додайте перевірку вмісту текстового поля на наявність порожнього рядка, щоб
 користувач не міг відправити запит, якщо поле пошуку порожнє. -->
 <!-- 
