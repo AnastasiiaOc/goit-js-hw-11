@@ -21,7 +21,9 @@ function getImage(image) {
             //throw is like return that brings us to "catch"
             }
             return resp.json();
-        })
+        }) .catch(error => {
+      alert('Incorrect request!')
+    })
     //     .then(data => {
     //     console.log(data)
     // })
