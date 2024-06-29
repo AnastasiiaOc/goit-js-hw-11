@@ -1,3 +1,5 @@
+import getImage from "./pixabay-api";
+
 export default createMarcupGallery;
 
 function createMarcupGallery(images) {
@@ -28,6 +30,7 @@ function createMarcupGallery(images) {
             </ul>
         </li>`).join('');
 };
+
 
 
 

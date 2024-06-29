@@ -2,7 +2,6 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
-// import iconError from './img/icon-error.png';
 import searchImages from './js/pixabay-api';
 import createMarcupGallery from './js/render-functions';
 
@@ -19,7 +18,7 @@ const lightbox = new SimpleLightbox('.gallery a',
 
 function showMessageError(textMes) {
     iziToast.error({
-        iconUrl: iconError,
+        // iconUrl: iconError,
         message: textMes,
         maxWidth: '432px',
         position: 'topRight',
@@ -35,7 +34,7 @@ function showGallery(tagImage) {
    if (tagImage) {
        form.reset();
        gallery.innerHTML = '';
-       loader.style.display = 'grid';
+       loader.style.display = 'block';
        searchImages(tagImage)
             .then(data => {
                 const arrayImages = data.hits;
@@ -48,7 +47,8 @@ function showGallery(tagImage) {
                 }
             })
             .catch((error) => showMessageError(error))
-            .finally(() => loader.style.display = 'none');
+           .finally(() => loader.style.display = 'none');
+       //  .catch((error) => console.error(error));
     } 
 }
 
@@ -58,6 +58,19 @@ form.addEventListener('submit', event => {
     showGallery(tagImage);
 })
 
+
+
+// Завдання #1 вирішено неправильно
+
+// Обробка помилок: Студент додав блок catch у функцію showGallery, що є добре, але загалом є хорошою практикою потенційно логувати помилки в консоль, особливо для розробки, використовуючи щось на кшталт console.error(error).
+// Очищення галереї: Перед додаванням нових результатів, внутрішнє HTML галереї установлюється в порожній рядок, що є правильно. Однак, цей рядок, ймовірно, повинен бути перед додаванням нових зображень, а не умовно заснований на наявності tagImage.
+// Найменування аргументів функцій: Ім'я аргумента tagImage може вводити в оману, якщо воно містить фактичний пошуковий рядок; назва на кшталт searchQuery була б більш описовою та точною.
+// Змішана відповідальність в обробці помилок: Функція showMessageError реалізована для відображення помилок за допомогою iziToast, що є нормально, але її назва натякає, що вона специфічна для ситуацій з помилками, однак, вона також може використовуватися для інформаційних повідомлень або повідомлень про успіх - варто розглянути більш універсальну назву на кшталт showToastMessage.
+//     loader.style.display встановлюється в 'grid' замість 'block' або 'none', що може бути ризиковано без контексту оточуючих CSS.Переконайтеся, що це навмисно і лоадер дійсно має відображатись як сітка.
+
+// Критичні помилки:
+// Вітсутня загальна обробка помилок на єтапі запиту у функції getImage
+// Враховуючи вказані критичні питання, завдання не може бути прийняте у його поточному стані. Після того, як критичні помилки будуть вирішені і закоментований код буде вирішений, будь ласка, переісправте для ще однієї оцінки
 
 
 
