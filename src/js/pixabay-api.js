@@ -12,13 +12,14 @@ function getImage(image) {
     });
     console.log(searchParams.toString());
     return fetch(`${BASE_URL}?${searchParams}`)
-        .then((resp) => {
-        if (!resp.ok) {
-            throw new Error(resp.statusText);
-            }
-            return resp.json();
-        })
-    
+     .then(resp => resp.json())
+        // .then((resp) => {
+        //     if (!resp.ok) {
+        //         throw new Error(resp.statusText);
+        //     }
+        //     return resp.json();
+        // })
+        // .cath(err => { console.log(err) });
 }
 
 

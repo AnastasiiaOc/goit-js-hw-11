@@ -2,7 +2,6 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
-// import searchImages from './js/pixabay-api';
 import createMarcupGallery from './js/render-functions';
 import getImage from './js/pixabay-api';
 
@@ -41,7 +40,6 @@ function showGallery(searchQuery) {
        showLoader()
        form.reset();
        gallery.innerHTML = '';
-    //    searchImages(searchQuery)
         getImage(searchQuery)
             .then(data => {
                 const arrayImages = data.hits;
@@ -52,8 +50,7 @@ function showGallery(searchQuery) {
                     showMessageError();
                 }
             })
-            .catch((error) => console.log(error))
-            // .catch((error) => showMessageError(error))
+          .catch((error) => showMessageError(error))
            .finally(() => hideLoader());  
     } 
 }
@@ -63,5 +60,3 @@ form.addEventListener('submit', event => {
     const searchQuery = event.target.elements.search.value;
     showGallery(searchQuery);
 })
-
-
